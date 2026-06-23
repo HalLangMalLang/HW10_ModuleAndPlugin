@@ -34,10 +34,10 @@ HW10_ModuleAndPlugin/
 ├── Source/
 │   ├── ModuleAndPlugin/       # 기본 프로젝트 모듈
 │   └── Test/                  # Test 추가 모듈
-│         ├─ Data/
-│              ├─ CharacterData.h
+│         └─ Data/
+│              ├─ CharacterData.h         # 플레이어 정보 클래스(기본 정보, 전투 정보, 속성 정보, 경험치 정보, 장비 정보)
 │              ├─ CharacterData.cpp
-│              ├─ CharacterDataHelper.h
+│              ├─ CharacterDataHelper.h   # Data 출력 관련 헬퍼 클래스 UBlueprintFunctionLibrary 상속
 │              └─ CharacterDataHelper.cpp
 │    
 ├── Plugins/
