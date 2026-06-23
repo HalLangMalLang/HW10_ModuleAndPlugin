@@ -34,6 +34,12 @@ HW10_ModuleAndPlugin/
 ├── Source/
 │   ├── ModuleAndPlugin/       # 기본 프로젝트 모듈
 │   └── Test/                  # Test 추가 모듈
+│         ├─ Data/
+│              ├─ CharacterData.h
+│              ├─ CharacterData.cpp
+│              ├─ CharacterDataHelper.h
+│              └─ CharacterDataHelper.cpp
+│    
 ├── Plugins/
 │   └── Temporary/             # 실습용 플러그인
 ├── Content/
