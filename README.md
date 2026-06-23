@@ -32,19 +32,44 @@
 ```text
 HW10_ModuleAndPlugin/
 ├── Source/
-│   ├── ModuleAndPlugin/       # 기본 프로젝트 모듈
-│   └── Test/                  # Test 추가 모듈
-│         └─ Data/
-│              ├─ CharacterData.h         # 플레이어 정보 클래스(기본 정보, 전투 정보, 속성 정보, 경험치 정보, 장비 정보)
-│              ├─ CharacterData.cpp
-│              ├─ CharacterDataHelper.h   # 플레이어 Data 로그 출력 - 헬퍼 클래스 UBlueprintFunctionLibrary 상속
-│              └─ CharacterDataHelper.cpp
-│    
+│   ├── ModuleAndPlugin/         # 기본 프로젝트 모듈
+│   └── Test/                    # Test 추가 모듈
+│       └── Data/
+│           ├── CharacterData.h           # 플레이어 정보 클래스 (기본/전투/속성/경험치/장비 정보)
+│           ├── CharacterData.cpp
+│           ├── CharacterDataHelper.h     # 플레이어 Data 로그 출력 헬퍼 클래스 (UBlueprintFunctionLibrary 상속)
+│           └── CharacterDataHelper.cpp
 ├── Plugins/
-│   └── Temporary/             # 실습용 플러그인
+│   └── Temporary/               # 실습용 플러그인
 ├── Content/
 └── ModuleAndPlugin.uproject
 ```
 
+---
+
+## ⚙️ 설정 방법
+
+### 모듈 추가 시
+1. `Source/` 폴더에 새 모듈 디렉토리를 생성합니다.
+2. `.Build.cs` 파일을 작성합니다.
+3. `.uproject` 파일의 `Modules` 배열에 등록합니다.
+
+### 플러그인 추가 시
+1. 에디터를 통한 생성을 권장합니다. (`Edit > Plugins > New Plugin`)
+2. `.uplugin` 파일 및 모듈 구조가 자동으로 생성됩니다.
+3. `.uproject` 파일의 `Plugins` 배열에 등록합니다.
+4. **주의**: `AdditionalDependencies`에 플러그인 모듈 추가가 필요합니다.
+
+---
+
+## ⚠️ 주의사항
+
+* **새로운 모듈에 언리얼 오브젝트 클래스가 없으면** 에디터에서 보이지 않을 수 있습니다.
+* **플러그인 콘텐츠 확인 시** Content Browser 설정에서 `Show Plugin Content` 활성화가 필수적입니다.
+* **PROJECE 재생성 시** `.vs`, `Binaries`, `DerivedDataCache`, `Intermediate`, `Saved` 폴더를 완전히 삭제한 후 진행해야 안전합니다.
+
+---
+
 ## 📖 정리 TIL
+
 * [[UE, C++] 언리얼 모듈(Module)과 플러그인(Plugin)](https://velog.io/@kimsn3464/UE-C-%EC%96%B8%EB%A6%AC%EC%96%BC-%EB%AA%A8%EB%93%88Module%EA%B3%BC-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8Plugin)
